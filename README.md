@@ -14,16 +14,36 @@
 ---
 
 ## Алгоритм
-Используется **градиентный спуск** для минимизации функции потерь MSE:
+Используется **градиентный спуск** для минимизации функции потерь MSE. 
+MSE (Mean Squared Error -- среднеквадратичная ошибка, чем она меньше, тем модель лучше обучена). 
 
-\[
-J(\theta) = \frac{1}{2m} \sum_{i=1}^{m} (h_\theta(x^{(i)}) - y^{(i)})^2
-\]
 
-Обновление параметров:
-\[
-\theta_j := \theta_j - \alpha \cdot \frac{\partial J}{\partial \theta_j}
-\]
+<img width="592" height="152" alt="image" src="https://github.com/user-attachments/assets/d193a3cf-24fa-4124-9d20-0c3a1a2a74fb" />
+
+где m -- количество обучающих примеров, 
+x_i -- i-й признаковый вектор (строка из Х)
+y_i -- истинное значение целевой переменной
+h(x_i) -- предсказание модели 
+множитель 1/2 добавлен для удобства дифференцирования и сокращается при взятии производной
+
+в коде:
+```python
+y_pred = X @ self.theta          # h_θ(x) = Xθ
+error = y_pred - y               # (h_θ(x) - y)
+gradient = (1 / m) * X.T @ error # ∇J = (1/m) * Xᵀ * (Xθ - y)
+loss = (1 / (2 * m)) * np.dot(error, error)  # J(θ) = (1/(2m)) * Σ(error²) (функция потерь)
+```
+
+
+
+Обновление параметров (градиентный спуск):
+<img width="327" height="127" alt="image" src="https://github.com/user-attachments/assets/c49ec908-da08-45f2-bdae-fbca486dace2" />
+
+где alpha -- скорость обучения модели (learning rate)
+
+в коде:
+```python
+self.theta -= self.alpha * gradient  # θ := θ - α * ∇J
 
 ---
 
