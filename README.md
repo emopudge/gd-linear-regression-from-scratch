@@ -22,15 +22,16 @@
 <img width="361" height="35" alt="image" src="https://github.com/user-attachments/assets/eabd7da2-084f-4b5c-b2bc-dced29c75561" />
 
 где 
-- theta - коэффициенты регрессии для каждого признака
+- \theta - коэффициенты регрессии для каждого признака
 
 В матричной форме:
+
 <img width="88" height="37" alt="image" src="https://github.com/user-attachments/assets/bd886ed8-7cca-4780-ab08-c992184e6533" />
 
 где 
 - y - целевой вектор предсказаний
 - Х - матрица признаков
-- theta - вектор коэффициентов
+- \theta - вектор коэффициентов
 
 
 
