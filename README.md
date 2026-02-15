@@ -130,7 +130,7 @@ self.theta -= self.alpha * gradient  # θ := θ - α * ∇J
    ```
 3. Выполните тесты:
    ```bash
-   python GDR_class_test.py
+   python -m unittest GDR_class_test.py -v
    ```
 4. Запустите пример использования (файл `example_usage.py`) (для простоты визуализируем только линейную регрессию зависимости цены и количества комнат)
 
