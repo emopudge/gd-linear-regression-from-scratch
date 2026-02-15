@@ -3,7 +3,7 @@
 """
 import pandas as pd
 import matplotlib.pyplot as plt
-from linreg import GDRegressor
+from GDR_class import GDRegressor
 
 data = pd.read_csv("housing.csv")
 X = data[["RM"]]  # Используем только один признак для простоты - среднее количество комнат
