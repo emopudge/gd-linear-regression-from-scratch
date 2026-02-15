@@ -33,7 +33,7 @@
 
 В матричной форме:
 
-h_θ(X) = Xθ
+<img width="232" height="66" alt="image" src="https://github.com/user-attachments/assets/f33399f0-032e-4682-a0c9-3426ed1e6bc0" />
 
 где 
 - X — матрица признаков (с добавленным столбцом единиц для θ₀)
