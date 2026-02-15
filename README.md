@@ -121,7 +121,7 @@ self.theta -= self.alpha * gradient  # θ := θ - α * ∇J
 
 1. Клонируйте репозиторий:
    ```bash
-   git clone https://github.com/ваш-ник/gd-linear-regression-from-scratch.git
+   git clone https://github.com/emopudge/gd-linear-regression-from-scratch.git
    cd gd-linear-regression-from-scratch
    ```
 2. Установите зависимости
@@ -130,7 +130,7 @@ self.theta -= self.alpha * gradient  # θ := θ - α * ∇J
    ```
 3. Выполните тесты:
    ```bash
-   python test_linreg.py
+   python GDR_class_test.py
    ```
 4. Запустите пример использования (файл `example_usage.py`) (для простоты визуализируем только линейную регрессию зависимости цены и количества комнат)
 
