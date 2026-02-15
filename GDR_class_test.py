@@ -4,7 +4,7 @@ from sklearn.metrics import r2_score
 from sklearn.metrics import root_mean_squared_error
 from sklearn.model_selection import train_test_split
 
-from linreg import GDRegressor
+from GDR_class import GDRegressor
 
 
 BOSTON = pd.read_csv("housing.csv")
