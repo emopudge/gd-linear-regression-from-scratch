@@ -5,29 +5,20 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from linreg import GDRegressor
 
-# Загрузка данных
-print("Загрузка данных Boston Housing...")
 data = pd.read_csv("housing.csv")
-X = data[["RM"]]  # Используем только один признак для простоты
+X = data[["RM"]]  # Используем только один признак для простоты - среднее количество комнат
 y = data["MEDV"]
 
-# Масштабирование признаков
-print("Масштабирование признаков...")
-X_scaled = X.apply(GDRegressor.z_scaler)
+X_scaled = X.apply(GDRegressor.z_scaler) # масштабирование
 
-# Поиск оптимальных параметров
-print("Поиск оптимальных гиперпараметров...")
 n_iter, alpha = GDRegressor.find_optimal_params(X_scaled, y)
 print(f"Оптимальные параметры: alpha={alpha}, n_iter={n_iter}")
 
-# Создание и обучение модели
-model = GDRegressor(alpha=alpha, n_iter=n_iter, progress=True)
+model = GDRegressor(alpha=alpha, n_iter=n_iter, progress=True) # модель
 model.fit(X_scaled, y)
 
-# Предсказание
 y_pred = model.predict(X_scaled)
 
-# Метрики
 rmse = GDRegressor.rmse(y, y_pred)
 r2 = GDRegressor.r_squared(y, y_pred)
 print(f"\nРезультаты:")
@@ -36,7 +27,7 @@ print(f"R²: {r2:.4f}")
 print(f"Intercept: {model.intercept_:.4f}")
 print(f"Coefficient: {model.coef_[0]:.4f}")
 
-# Визуализация
+# визуализация
 plt.figure(figsize=(12, 4))
 
 plt.subplot(1, 2, 1)
