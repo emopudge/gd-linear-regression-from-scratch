@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+pythonenv*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Data files (если не хочешь загружать большой датасет)
+# housing.csv  # раскомментируй, если датасет слишком большой
+
+# Logs
+*.log
